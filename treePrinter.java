@@ -22,7 +22,7 @@ public class treePrinter {
     }
 
     public static void christmasTree(int height) {
-        // The tree is composed of a triangle of dimension 'height' over a 2x6 rectangle representing the base of the tree. 
+        // The tree is composed of a triangle of dimension 'height' over a 2x3 rectangle representing the base of the tree. 
 
         int i = 1;
         int n = height;
@@ -31,7 +31,8 @@ public class treePrinter {
             printStars(2 * i - 1); //The more we go towards the base, the more spaces decrease and stars increase.
             i++;
         }
-        //This part prints the base of the tree once the loop is over
+        //This part prints the base of the tree once the loop is over. 
+        //printSpaces() is dependent on the dimension, so that the base of the tree is always centralized no matter the width.
         printSpaces(n - 2);
         printStars(3);
         printSpaces(n - 2);
@@ -40,7 +41,7 @@ public class treePrinter {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please write a positive integer");
+        System.out.println("How big should the tree be? Please write an integer bigger then 1");
         int input = scanner.nextInt();
         christmasTree(input);
 
