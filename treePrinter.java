@@ -25,17 +25,17 @@ public class treePrinter {
         // The tree is composed of a triangle of dimension 'height' over a 2x3 rectangle representing the base of the tree. 
 
         int i = 1;
-        int n = height;
+        int halfWidth = height;
         while (i <= height) {
-            printSpaces((n - i)); //Spaces are added so that there is the right distance from the left margin of the terminal.
+            printSpaces((halfWidth - i)); //Spaces are added so that there is the right distance from the left margin of the terminal.
             printStars(2 * i - 1); //The more we go towards the base, the more spaces decrease and stars increase.
             i++;
         }
         //This part prints the base of the tree once the loop is over. 
-        //printSpaces() is dependent on the dimension, so that the base of the tree is always centralized no matter the width.
-        printSpaces(n - 2);
+        //printSpaces() has the width as a parameter, so that the base of the tree is always centralized.
+        printSpaces(halfWidth - 2);
         printStars(3);
-        printSpaces(n - 2);
+        printSpaces(halfWidth - 2);
         printStars(3);
     }
 
